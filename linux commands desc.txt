@@ -1,0 +1,153 @@
+# Create a directory called EV4
+mkdir ev4
+# Resultant directory: /home/omera/ev4
+# Navigate into the EV4 directory
+cd ev4
+# Resultant directory: /home/omera/ev4
+# Create a directory with roll number 41
+mkdir 41
+# Resultant directory: /home/omera/ev4/41 (created, but you're still in ev4)
+# Navigate into your roll number directory
+cd 41
+# Resultant directory: /home/omera/ev4/41
+# Switch to the previous directory you were in
+cd -
+# Resultant directory: /home/omera/ev4
+# Switch back to the directory before
+cd -
+# Resultant directory: /home/omera/ev4/41
+# Stay in current directory
+cd .
+# Resultant directory: /home/omera/ev4/41
+# Move up one level to parent directory
+cd ..
+# Resultant directory: /home/omera/ev4
+# Go to your home directory
+cd ~
+# Resultant directory: /home/omera
+# Go to root directory (top of the file system)
+cd /
+# Resultant directory: /
+# List files in long format (shows permissions, owner, size, date)
+ls -l
+# Resultant directory: / (no change, just lists contents)
+# Try to enter 'media' folder in current directory
+cd media
+# Resultant directory: /media 
+# Return to home directory
+cd
+# Resultant directory: /home/omera
+# Print current working directory path
+pwd
+# Resultant directory: /home/omera
+# Try to enter 'media' in current location
+cd media
+# Resultant directory: /home/omera/media (error)
+# Go to /media directory from root
+cd /media
+# Resultant directory: /media
+# List files in long format
+ls -l
+# Resultant directory: /media
+# List all files including hidden ones (those starting with .)
+ls -al
+# Resultant directory: /media 
+# Navigate to your specific folder using absolute path from home
+cd ~/ev4/41
+# Resultant directory: /home/omera/ev4/41
+# Create an empty directory called emptydummy
+mkdir emptydummy
+# Resultant directory: /home/omera/ev4/41
+# Create another directory called dummy
+mkdir dummy
+# Resultant directory: /home/omera/ev4/41
+# Navigate into the dummy directory
+cd dummy
+# Resultant directory: /home/omera/ev4/41/dummy
+# Create an empty file called file1
+touch file1
+# Resultant directory: /home/omera/ev4/41/dummy
+# Create an empty file called file2
+touch file2
+# Resultant directory: /home/omera/ev4/41/dummy
+# List files in long format to see the created files
+ls -l
+# shows file1 and file2
+# Delete file2 with confirmation prompt(asks if sure)
+rm -i file2
+# Resultant directory: /home/omera/ev4/41/dummy 
+# List files again to verify file2 is deleted
+ls -l
+# Resultant directory: /home/omera/ev4/41/dummy (shows only file1)
+# Go back to parent directory
+cd ..
+# Resultant directory: /home/omera/ev4/41
+# Attempt to remove emptydummy directory (fails - wrong command)
+rm emptydummy
+# Resultant directory: /home/omera/ev4/41 (error message shown)
+# Remove empty directory emptydummy
+rmdir emptydummy
+# Resultant directory: /home/omera/ev4/41 (emptydummy deleted)
+# Try to remove dummy directory (fails because it contains file1)
+rmdir dummy
+# Resultant directory: /home/omera/ev4/41 (error: directory not empty)
+# Recursively remove dummy directory and all its contents
+rm -r dummy
+# Resultant directory: /home/omera/ev4/41 (dummy and file1 deleted)
+# Create file1.txt - Type 'My first line' and press CTRL+D
+cat > file1.txt
+# Resultant directory: /home/omera/ev4/41 (file1.txt created here)
+# Create file2.txt - Type 'Hello Second line' and press CTRL+D
+cat > file2.txt
+# Resultant directory: /home/omera/ev4/41 (file2.txt created here)
+# Create file3.txt - Type 'Hello line' and press CTRL+D
+cat > file3.txt
+# Resultant directory: /home/omera/ev4/41 (file3.txt created here)
+# Combine file1.txt and file2.txt into file_combined.txt
+cat file1.txt file2.txt > file_combined.txt
+# Resultant directory: /home/omera/ev4/41 (file_combined.txt created)
+# Display the contents of file_combined.txt
+cat file_combined.txt
+# Resultant directory: /home/omera/ev4/41 (displays combined content)
+# Append the contents of file3.txt to file_combined.txt
+cat file3.txt >> file_combined.txt
+# Resultant directory: /home/omera/ev4/41 (file_combined.txt updated)
+# Display the final combined contents
+cat file_combined.txt
+# Resultant directory: /home/omera/ev4/41 (displays all three lines)
+# Search for "hello" (case-insensitive) in all files starting with "file"
+grep -i hello file*
+# Resultant directory: /home/omera/ev4/41 (shows matches)
+# Copy file1.txt to the ~/ev4 directory
+cp file1.txt ~/ev4
+# Resultant directory: /home/omera/ev4/41 (file1.txt copied to /home/omera/ev4)
+# Rename file_combined.txt to combined
+mv file_combined.txt combined
+# Resultant directory: /home/omera/ev4/41 (file renamed to combined)
+# Give execute permission to the owner of combined file
+chmod u+x combined
+# Resultant directory: /home/omera/ev4/41 (permissions changed)
+# Remove read permission from group for combined file
+chmod g-r combined
+# Resultant directory: /home/omera/ev4/41 (permissions changed)
+# Give full permissions (rwxrwxrwx) to owner, group, and others
+chmod 777 combined
+# Resultant directory: /home/omera/ev4/41 (permissions: rwxrwxrwx)
+# Create a new user named alice
+sudo useradd alice
+# Resultant directory: /home/omera/ev4/41 (user alice created)
+# Set password for user alice
+sudo passwd alice
+# Resultant directory: /home/omera/ev4/41 (password set for alice)
+# Delete user alice
+sudo userdel alice
+# Resultant directory: /home/omera/ev4/41 (user alice deleted)
+# Send a real-time message to another user - Type message and press CTRL+D
+write alice
+# Resultant directory: /home/omera/ev4/41 (message sent to alice's terminal)
+# Enable receiving messages from other users
+mesg y
+# Resultant directory: /home/omera/ev4/41 (messaging enabled)
+# Disable receiving messages from other users
+mesg n
+# Resultant directory: /home/omera/ev4/41 (messaging disabled)
